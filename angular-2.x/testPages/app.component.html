@@ -1,0 +1,14 @@
+<h1>aPatternRestrict for Angular 2</h1>
+
+<p>
+  <label>Pattern to test:</label>
+  <input type="text" [(ngModel)]="patternToTest" />
+</p>
+
+<p>
+  <label>Text with pattern-restrict</label>
+  <input [(ngModel)]="testValue" a-pattern-restrict [pattern]="patternToTest" />
+</p>
+
+<p>Current test value (from model): {{testValue}}</p>
+

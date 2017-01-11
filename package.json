@@ -1,0 +1,26 @@
+{
+  "name": "ng-pattern-restrict",
+  "version": "0.2.2",
+  "main": "src/ng-pattern-restrict.min.js",
+  "dependencies": {
+    "angular": "^1.2.27"
+  },
+  "devDependencies": {
+    "express": "~4.13.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.10.1",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-protractor-runner": "^4.0.0",
+    "protractor": "^4.0.0",
+    "grunt-protractor-webdriver": "^0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlphaGit/ng-pattern-restrict.git"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "test-travis": "grunt test:travis",
+    "dist": "grunt uglify"
+  }
+}
