@@ -23,7 +23,7 @@ function getCapability(options) {
   var capability = extend(defaultsForCapability, options);
 
   var nameParts = [];
-  nameParts.push('ng-pattern-restrict build');
+  nameParts.push('a-pattern-restrict build');
   nameParts.push(process.env.TRAVIS_BUILD_NUMBER);
   nameParts.push(options.testExtraDescriptor);
   nameParts.push(options.browserName);

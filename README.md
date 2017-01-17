@@ -1,4 +1,4 @@
-# ng-pattern-restrict [![Build Status](https://travis-ci.org/AlphaGit/ng-pattern-restrict.svg?branch=master)][travisci] [![Build Status](https://saucelabs.com/open_sauce/build_status/AlphaSau.svg)][AlphaSau]
+# a-pattern-restrict [![Build Status](https://travis-ci.org/AlphaGit/a-pattern-restrict.svg?branch=master)][travisci] [![Build Status](https://saucelabs.com/open_sauce/build_status/AlphaSau.svg)][AlphaSau]
 
 Allowing certain inputs based on a regex pattern, preventing the user from inputting anything invalid.
 
@@ -22,23 +22,23 @@ The logic is quite simple:
 # Installation
 
 ```console
-bower install ng-pattern-restrict
+bower install a-pattern-restrict
 # or
-npm install ng-pattern-restrict
+npm install a-pattern-restrict
 ```
 
-Alternatively, copy the [ng-pattern-restrict.js][srcfile] (or the minified version [ng-pattern-restrict.min.js][srcminfile]) into your project, load it into the browser and use it away.
+Alternatively, copy the [a-pattern-restrict.js][srcfile] (or the minified version [a-pattern-restrict.min.js][srcminfile]) into your project, load it into the browser and use it away.
 
 # Usage
 
 ```html
-<input type="text" pattern="[0-9]+" ng-pattern-restrict />
+<input type="text" pattern="[0-9]+" a-pattern-restrict />
 ```
 
 Should be the same as
 
 ```html
-<input type="text" ng-pattern-restrict="[0-9]+" pattern="[0-9]+" />
+<input type="text" a-pattern-restrict="[0-9]+" pattern="[0-9]+" />
 ```
 
 ## Notes:

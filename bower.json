@@ -1,12 +1,12 @@
 {
-  "name": "ng-pattern-restrict",
-  "version": "0.2.2",
+  "name": "a-pattern-restrict",
+  "version": "1.0.0",
   "homepage": "https://github.com/AlphaGit/ng-pattern-restrict",
   "authors": [
     "Alpha <alphagma@gmail.com>"
   ],
-  "description": "Allowing only certain inputs based on a regex pattern, for AngularJS",
-  "main": "src/ng-pattern-restrict.js",
+  "description": "Allowing only certain inputs based on a regex pattern, for AngularJS 2",
+  "main": "src/a-pattern-restrict.js",
   "keywords": [
     "angularjs",
     "input",
