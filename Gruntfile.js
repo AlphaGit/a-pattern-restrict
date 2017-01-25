@@ -26,17 +26,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: 'localhost',
                     port: 9001,
-                    base: './angular-1.x/',
-                    middleware: [
-                        function(req, res, next) {
-                            if (MIN_REQUEST_URL_REGEX.test(req.url) && SRC_REQUEST_URL_REGEX.test(req.url)) {
-                                serveStaticFile(res, '/angular-1.x/src/ng-pattern-restrict.min.js');
-                            } else {
-                                var newUrl = req.url.replace(MIN_REQUEST_URL_REGEX, '');
-                                serveStaticFile(res, newUrl);
-                            }
-                        }
-                    ]
+                    base: ['node_modules', 'angular-2.x']
                 }
             }
         },

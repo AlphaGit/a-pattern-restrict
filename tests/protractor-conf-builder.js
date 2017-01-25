@@ -8,7 +8,7 @@ var env = {};
 function getConfigurationDefaults() {
   return {
     specs: ['specs/*.js'],
-    baseUrl: 'http://localhost:9001/angular-1.x/',
+    baseUrl: 'http://localhost:9001/angular-2.x/',
     jasmineNodeOpts: {
       showColors: true,
       isVerbose: true,
