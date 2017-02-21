@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: 'localhost',
                     port: 9001,
-                    base: ['node_modules', 'angular-2.x']
+                    base: ['node_modules', 'angular-2.x', 'tests']
                 }
             }
         },

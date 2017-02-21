@@ -2,7 +2,9 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": ["node_modules", "bower_components", ".tscache"],
+			"file_exclude_patterns": ["angular-2.x/src/*.js", "angular-2.x/testPages/app/*.js"]
 		}
 	]
 }
