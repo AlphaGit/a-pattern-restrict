@@ -5,4 +5,5 @@ bower_components
 npm-debug.log
 .tscache/
 angular-2.x/**/*.js
+!angular-2.x/testPages/systemjs.config.js
 angular-2.x/**/*.map
