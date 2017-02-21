@@ -126,6 +126,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-tslint');
 
-    grunt.registerTask('test', ['connect', 'protractor_webdriver:webDriverStart', 'protractor:test']);
-    grunt.registerTask('test:travis', ['connect', 'protractor:travis', 'protractor:travismin']);
+    grunt.registerTask('test', ['tslint', 'ts', 'connect', 'protractor_webdriver:webDriverStart', 'protractor:test']);
+    grunt.registerTask('test:travis', ['tslint', 'ts', 'connect', 'protractor:travis', 'protractor:travismin']);
 };

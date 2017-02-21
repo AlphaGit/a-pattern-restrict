@@ -159,7 +159,7 @@ export class APatternRestrict {
     let s = window.getSelection();
     let originalSelectionLength = String(s).length;
     let selectionLength: number;
-    let didReachZero: false;
+    let didReachZero = false;
     let detectedCaretPosition: number;
     let restorePositionCounter: number;
 
