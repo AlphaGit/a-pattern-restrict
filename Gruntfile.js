@@ -100,6 +100,22 @@ module.exports = function(grunt) {
                     quoteStyle: 1
                 }
             }
+        },
+        ts: {
+            options: {
+                target: 'es5',
+                module: 'commonjs',
+                moduleResolution: 'node',
+                sourceMap: true,
+                emitDecoratorMetadata: true,
+                experimentalDecorators: true,
+                lib: [ "es2015", "dom" ],
+                noImplicitAny: true,
+                suppressImplicitAnyIndexErrors: true
+            },
+            default: {
+                src: ['angular-2.x/**/*.ts']
+            }
         }
     });
 
@@ -107,6 +123,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-ts');
 
     grunt.registerTask('test', ['connect', 'protractor_webdriver:webDriverStart', 'protractor:test']);
     grunt.registerTask('test:travis', ['connect', 'protractor:travis', 'protractor:travismin']);
