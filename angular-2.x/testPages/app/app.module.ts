@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 
-import { APatternRestrict } from '../../src/a-pattern-restrict';
+import { APatternRestrict } from './../../src/a-pattern-restrict.js';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],

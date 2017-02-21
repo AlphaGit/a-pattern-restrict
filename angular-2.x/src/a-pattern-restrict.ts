@@ -1,6 +1,6 @@
 import { Directive, Input, Output, HostListener, ElementRef, EventEmitter } from '@angular/core';
 
-const DEBUG: boolean = true;
+const DEBUG = true;
 
 let showDebugInfo = console.debug;
 
@@ -10,18 +10,23 @@ let showDebugInfo = console.debug;
 export class APatternRestrict {
   private oldValue: string;
   private caretPosition: number;
+  private _pattern: string;
+  private regex: RegExp;
+  private getCaretPosition: Function;
+  private setCaretPosition: Function;
+
+  @Output() ngModelChange: EventEmitter<any> = new EventEmitter();
 
   constructor(private el: ElementRef) {
-    DEBUG && showDebugInfo("Initializing");
+    if (DEBUG) { showDebugInfo('Initializing'); }
     this.oldValue = el.nativeElement.value;
-    if (!this.oldValue) this.oldValue = '';
-    DEBUG && showDebugInfo(`Original value: ${this.oldValue}`);
+    if (!this.oldValue) { this.oldValue = ''; }
+    if (DEBUG) { showDebugInfo(`Original value: ${this.oldValue}`); }
 
     this.detectGetCaretPositionMethods();
     this.detectSetCaretPositionMethods();
   }
 
-  private _pattern: string;
   get pattern() {
     return this._pattern;
   }
@@ -31,49 +36,48 @@ export class APatternRestrict {
     try {
       this.regex = new RegExp(value);
       this._pattern = value;
-      DEBUG && showDebugInfo(`Pattern binding changed to: ${this._pattern}`);
+      if (DEBUG) { showDebugInfo(`Pattern binding changed to: ${this._pattern}`); }
     } catch (e) {
       throw `Invalid RegEx string parsed for ngPatternRestrict: ${value}`;
     }
   }
 
   // approach from http://stackoverflow.com/q/36106350/147507
-  @Output() ngModelChange:EventEmitter<any> = new EventEmitter();
 
   @HostListener('input', ['$event'])
   @HostListener('keyup', ['$event'])
   @HostListener('click', ['$event'])
   genericEventHandler(evt: Event) {
-      //HACK Chrome returns an empty string as value if user inputs a non-numeric string into a number type input
+      // HACK Chrome returns an empty string as value if user inputs a non-numeric string into a number type input
       // and this may happen with other non-text inputs soon enough. As such, if getting the string only gives us an
       // empty string, we don't have the chance of validating it against a regex. All we can do is assume it's wrong,
       // since the browser is rejecting it either way.
 
-      var iElement = <HTMLInputElement>this.el.nativeElement;
+      let iElement = <HTMLInputElement>this.el.nativeElement;
       let newValue = iElement.value;
       let inputValidity = iElement.validity;
 
       if (newValue === '' && iElement.type !== 'text' && inputValidity && inputValidity.badInput) {
-        DEBUG && showDebugInfo(`Value cannot be verified. Should be invalid. Reverting back to: ${this.oldValue}`);
+        if (DEBUG) { showDebugInfo(`Value cannot be verified. Should be invalid. Reverting back to: ${this.oldValue}`); }
         evt.preventDefault();
         this.revertToPreviousValue();
-      } else if (newValue === "" && this.getValueLengthThroughSelection(<ElementRef>this.el) !== 0) {
-        DEBUG && showDebugInfo(`Invalid input. Reverting back to: ${this.oldValue}`);
+      } else if (newValue === '' && this.getValueLengthThroughSelection(<ElementRef>this.el) !== 0) {
+        if (DEBUG) { showDebugInfo(`Invalid input. Reverting back to: ${this.oldValue}`); }
         evt.preventDefault();
         this.revertToPreviousValue();
       } else if (this.regex.test(newValue)) {
-        DEBUG && showDebugInfo(`New value passed validation against ${this.regex}: ${newValue}`);
+        if (DEBUG) { showDebugInfo(`New value passed validation against ${this.regex}: ${newValue}`); }
         this.updateCurrentValue(newValue);
       } else {
-        DEBUG && showDebugInfo(`New value did NOT pass validation against ${this.regex}: ${newValue}, reverting back to: ${this.oldValue}`);
+        if (DEBUG) {
+          showDebugInfo(`New value did NOT pass validation against ${this.regex}: ${newValue}, reverting back to: ${this.oldValue}`);
+        }
         evt.preventDefault();
         this.revertToPreviousValue();
       }
   }
 
-  private regex: RegExp;
-
-  private notThrows(testFn: Function, shouldReturnTruthy: boolean = false): boolean {
+  private notThrows(testFn: Function, shouldReturnTruthy = false): boolean {
     try {
       return testFn() || !shouldReturnTruthy;
     } catch (e) {
@@ -86,7 +90,7 @@ export class APatternRestrict {
 
     // Chrome will throw on input.selectionStart of input type=number
     // See http://stackoverflow.com/a/21959157/147507
-    let selectionStartTester = function(inputElement: HTMLInputElement) { return inputElement.selectionStart; };
+    let selectionStartTester = function() { return inputElement.selectionStart; };
     if (this.notThrows(selectionStartTester)) {
       this.getCaretPosition = this.getCaretPositionWithInputSelectionStart;
     } else {
@@ -112,8 +116,6 @@ export class APatternRestrict {
     }
   }
 
-  private getCaretPosition: Function;
-  private setCaretPosition: Function;
 
   private setCaretPositionWithSetSelectionRange(position: number): void {
     (<HTMLInputElement>this.el.nativeElement).setSelectionRange(position, position);
@@ -157,7 +159,7 @@ export class APatternRestrict {
     let s = window.getSelection();
     let originalSelectionLength = String(s).length;
     let selectionLength: number;
-    let didReachZero: boolean = false;
+    let didReachZero: false;
     let detectedCaretPosition: number;
     let restorePositionCounter: number;
 
