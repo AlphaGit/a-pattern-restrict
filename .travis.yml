@@ -6,6 +6,8 @@ cache:
     - bower_components
     - $(npm config get prefix)/bin/grunt-cli
     - $(npm config get prefix)/bin/bower
+node_js:
+  - node # latest Node.js release
 before_script:
   - npm list -g grunt-cli --depth=0 || npm install -g grunt-cli
   - npm list -g bower --depth=0 || npm install -g bower
