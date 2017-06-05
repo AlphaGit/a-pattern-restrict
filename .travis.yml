@@ -19,6 +19,7 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - ./node_modules/protractor/bin/webdriver-manager update
+  # listign current version of dependencies just for debugging purposes
   - echo "CURRENT VERSIONS"
   - npm list
   - bower list
