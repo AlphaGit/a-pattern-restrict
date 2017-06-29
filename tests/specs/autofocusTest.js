@@ -8,14 +8,15 @@ describe('Focus', function() {
     page.open('testPages/autoFocus.html');
   });
 
-  // SafariWebDriver interactions are not implemented, cannot sendKeys to page
-  // https://code.google.com/p/selenium/issues/detail?id=4136
-  ignoreBrowsers(['safari'], function(it) {
-    it('should not focus the elements it uses', function() {
+  it('should not focus the elements it uses', function(done) {
+    // SafariWebDriver interactions are not implemented, cannot sendKeys to page
+    // https://code.google.com/p/selenium/issues/detail?id=4136
+    ignoreBrowsers(['safari'], done, function(done) {
       page.sendKeys('ABC');
 
       expect(page.getText1()).toEqual('ABC');
       expect(page.getText2()).toEqual('');
+      done();
     });
   });
 }); // End: Focus

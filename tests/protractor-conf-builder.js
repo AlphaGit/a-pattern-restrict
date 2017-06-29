@@ -55,5 +55,5 @@ var defaultsForCapability = {
   build: process.env.TRAVIS_BUILD_NUMBER,
   shardTestFiles: false,
   maxInstances: 5,
-  seleniumVersion: '2.48.2'
+  seleniumVersion: '3.4.0'
 };
