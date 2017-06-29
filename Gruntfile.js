@@ -111,15 +111,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-tslint');
-
-    grunt.loadNpmTasks('grunt-selenium-server');
     
     grunt.registerTask('test', [
         /*'tslint', 'ts',*/
         'connect',
-        /*'protractor_webdriver:webDriverStart',*/
-        'protractor:test',
-        'stop-selenium-server:dev'
+        'protractor_webdriver:webDriverStart',
+        'protractor:test'
     ]);
     grunt.registerTask('test:travis', ['tslint', 'ts', 'connect', 'protractor:travis', 'protractor:travismin']);
 };
