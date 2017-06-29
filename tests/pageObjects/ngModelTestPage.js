@@ -28,6 +28,10 @@ module.exports = function NgModelTestPage() {
 
     getModelValue: function() {
       return modelValue.getInnerHtml();
+    },
+
+    navigateInAppTo: function(testName) {
+      return element(by.css('a[href*="{' + testName + '"]')).click();
     }
   }
 };

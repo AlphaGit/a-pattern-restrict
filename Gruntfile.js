@@ -1,20 +1,6 @@
 'use strict';
 
-var fs = require('fs');
-
-function serveStaticFile(response, filePath) {
-    filePath = './' + filePath;
-    fs.stat(filePath, function(err, stat) {
-        if (err || !stat.isFile()) 
-        {
-            response.writeHead(404, 'Cant find file ' + filePath);
-            response.end();
-            return;
-        }
-
-        fs.createReadStream('./' + filePath).pipe(response);
-    });
-}
+var os = require('os');
 
 module.exports = function(grunt) {
     var SRC_REQUEST_URL_REGEX = new RegExp('src/.*ng-pattern-restrict\\.js$');
@@ -26,7 +12,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: 'localhost',
                     port: 9001,
-                    base: ['node_modules', 'angular-2.x', 'tests']
+                    base: ['node_modules', 'angular-2.x'],
                 }
             }
         },
@@ -126,6 +112,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-tslint');
 
-    grunt.registerTask('test', [/*'tslint', 'ts',*/ 'connect', 'protractor_webdriver:webDriverStart', 'protractor:test']);
+    grunt.loadNpmTasks('grunt-selenium-server');
+    
+    grunt.registerTask('test', [
+        /*'tslint', 'ts',*/
+        'connect',
+        /*'protractor_webdriver:webDriverStart',*/
+        'protractor:test',
+        'stop-selenium-server:dev'
+    ]);
     grunt.registerTask('test:travis', ['tslint', 'ts', 'connect', 'protractor:travis', 'protractor:travismin']);
 };

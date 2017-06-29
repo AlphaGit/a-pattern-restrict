@@ -34,6 +34,10 @@ module.exports = function BasicTestPage() {
 
     getText: function() {
       return textBox.getAttribute('value');
+    },
+
+    navigateInAppTo: function(testName) {
+      return element(by.css('a[href*="{' + testName + '"]')).click();
     }
   }
 };

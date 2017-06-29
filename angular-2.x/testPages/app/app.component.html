@@ -1,14 +1,7 @@
 <h1>aPatternRestrict for Angular 2</h1>
 
-<p>
-  <label>Pattern to test:</label>
-  <input type="text" [(ngModel)]="patternToTest" />
-</p>
+<nav>Tests:
+	<a routerLink="/autofocus" routerLinkActive="active">Autofocus</a>
+</nav>
 
-<p>
-  <label>Text with pattern-restrict</label>
-  <input [(ngModel)]="testValue" a-pattern-restrict [pattern]="patternToTest" />
-</p>
-
-<p>Current test value (from model): {{testValue}}</p>
-
+<router-outlet></router-outlet>

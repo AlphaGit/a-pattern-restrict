@@ -4,7 +4,4 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
 })
-export class AppComponent  {
-  patternToTest = '^\\d+$';
-  testValue = '12345';
-}
+export class AppComponent  { };

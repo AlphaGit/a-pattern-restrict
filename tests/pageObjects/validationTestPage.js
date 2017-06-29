@@ -28,6 +28,10 @@ module.exports = function ValidationTestPage() {
 
     getValidStatusPromise: function() {
       return validStatusElement.getText();
+    },
+
+    navigateInAppTo: function(testName) {
+      return element(by.css('a[href*="{' + testName + '"]')).click();
     }
   }
 };

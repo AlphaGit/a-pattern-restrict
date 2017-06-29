@@ -28,6 +28,10 @@ module.exports = function AutoFocusTestPage() {
 
     getText2: function() {
       return textBox2.getAttribute('value');
+    },
+
+    navigateInAppTo: function(testName) {
+      element(by.css('a[href*="{' + testName + '"]'));
     }
   }
 };
