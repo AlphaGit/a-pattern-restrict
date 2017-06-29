@@ -31,7 +31,7 @@ module.exports = function AutoFocusTestPage() {
     },
 
     navigateInAppTo: function(testName) {
-      element(by.css('a[href*="{' + testName + '"]'));
+      element(by.css('a[href*="' + testName + '"]')).click();
     }
   }
 };
