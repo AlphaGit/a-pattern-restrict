@@ -1,3 +1,4 @@
+/*
 var TestPage = require('../pageObjects/validationTestPage');
 
 describe('Focus', function() {
@@ -17,3 +18,4 @@ describe('Focus', function() {
     expect(page.getValidStatusPromise()).toBe("true");
   });
 }); // End: Focus
+*/

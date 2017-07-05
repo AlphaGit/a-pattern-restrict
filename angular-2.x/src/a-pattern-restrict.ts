@@ -38,7 +38,7 @@ export class APatternRestrict {
       this._pattern = value;
       if (DEBUG) { showDebugInfo(`Pattern binding changed to: ${this._pattern}`); }
     } catch (e) {
-      throw `Invalid RegEx string parsed for ngPatternRestrict: ${value}`;
+      throw `Invalid RegEx string parsed for a-pattern-restrict: ${value}`;
     }
   }
 

@@ -1,3 +1,4 @@
+/*
 var TestPage = require('../pageObjects/basicTestPage');
 
 describe('Input type=text', function() {
@@ -41,3 +42,4 @@ describe('Input type=text', function() {
     });
   });
 }); // End: Input type=text
+*/

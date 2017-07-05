@@ -1,3 +1,4 @@
+/*
 var ngModelTestPage = require('../pageObjects/ngModelTestPage');
 
 describe('IME Inputs', function() {
@@ -39,3 +40,4 @@ describe('IME Inputs', function() {
     expect(page.getModelValue()).toEqual('123');
   });
 }); // End: IME Inputs
+*/

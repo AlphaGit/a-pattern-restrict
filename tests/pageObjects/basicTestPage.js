@@ -1,5 +1,4 @@
 module.exports = function BasicTestPage() {
-  var htmlPatternTextBox = null;
   var patternTextBox = null;
   var textBox = null;
 
@@ -15,13 +14,8 @@ module.exports = function BasicTestPage() {
     open: function(url) {
       browser.get(url);
 
-      htmlPatternTextBox = element(by.id('htmlPattern'));
       patternTextBox = element(by.id('pattern'));
       textBox = element(by.id('textbox'));
-    },
-
-    setHtmlPattern: function(pattern) {
-      return setText(htmlPatternTextBox, pattern);
     },
 
     setPattern: function(pattern) {
@@ -37,7 +31,7 @@ module.exports = function BasicTestPage() {
     },
 
     navigateInAppTo: function(testName) {
-      return element(by.css('a[href*="{' + testName + '"]')).click();
+      return element(by.css('a[href*="' + testName + '"]')).click();
     }
   }
 };

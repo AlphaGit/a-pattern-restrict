@@ -1,6 +1,7 @@
 var TestPage = require('../pageObjects/autofocusTestPage');
 var ignoreBrowsers = require('../testFramework/ignoreBrowsers');
 
+/*
 describe('Focus', function() {
   var page = null;
 
@@ -24,3 +25,4 @@ describe('Focus', function() {
     });
   });
 }); // End: Focus
+*/

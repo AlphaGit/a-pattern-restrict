@@ -1,3 +1,4 @@
+/*
 var TestPage = require('../pageObjects/basicTestPage');
 var ignoreBrowsers = require('../testFramework/ignoreBrowsers');
 
@@ -65,3 +66,4 @@ describe('Input type=number', function() {
     expect(page.getText()).toEqual('123');
   });
 }); // End: Input type=number
+*/

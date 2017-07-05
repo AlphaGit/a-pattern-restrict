@@ -1,0 +1,6 @@
+<label for="patternText">Pattern:</label>
+<input type="text" id="pattern" [(ngModel)]="patternToTest" />
+<br />
+
+<label for="textbox">Text:</label>
+<input type="text" id="textbox" [(ngModel)]="testValue" a-pattern-restrict [pattern]="patternToTest" />

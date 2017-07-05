@@ -6,16 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }  from './app.component';
 
 import { AutoFocusComponent } from './autofocus/autofocus.component';
+import { HtmlPatternComponent } from './htmlPattern/htmlPattern.component';
 
 import { APatternRestrict } from './../../src/a-pattern-restrict.js';
 
 const appRoutes: Routes = [
-  { path: 'autofocus', component: AutoFocusComponent }
+  { path: 'autofocus', component: AutoFocusComponent },
+  { path: 'htmlPattern', component: HtmlPatternComponent }
 ];
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, APatternRestrict, AutoFocusComponent ],
+  declarations: [ AppComponent, APatternRestrict, AutoFocusComponent, HtmlPatternComponent ],
   bootstrap:    [ AppComponent ],
   exports:      [ RouterModule ]
 })
