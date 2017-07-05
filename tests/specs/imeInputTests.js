@@ -1,11 +1,11 @@
-/*
 var ngModelTestPage = require('../pageObjects/ngModelTestPage');
 
 describe('IME Inputs', function() {
   var page = null;
   beforeEach(function() {
     page = new ngModelTestPage();
-    page.open('testPages/imeInput.html');
+    page.open('testPages/');
+    page.navigateInAppTo('/imeInput');
   });
 
   it('should allow numerical input', function() {
@@ -40,4 +40,3 @@ describe('IME Inputs', function() {
     expect(page.getModelValue()).toEqual('123');
   });
 }); // End: IME Inputs
-*/

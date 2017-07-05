@@ -27,11 +27,11 @@ module.exports = function NgModelTestPage() {
     },
 
     getModelValue: function() {
-      return modelValue.getInnerHtml();
+      return modelValue.getAttribute('innerHTML');
     },
 
     navigateInAppTo: function(testName) {
-      return element(by.css('a[href*="{' + testName + '"]')).click();
+      return element(by.css('a[href*="' + testName + '"]')).click();
     }
   }
 };
