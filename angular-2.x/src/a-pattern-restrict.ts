@@ -34,11 +34,12 @@ export class APatternRestrict {
   @Input()
   set pattern(value: string) {
     try {
-      this.regex = new RegExp(value);
+      let newRegex = new RegExp(value);
+      this.regex = newRegex;
       this._pattern = value;
       if (DEBUG) { showDebugInfo(`Pattern binding changed to: ${this._pattern}`); }
     } catch (e) {
-      throw `Invalid RegEx string parsed for a-pattern-restrict: ${value}`;
+      if (DEBUG) { showDebugInfo(`Invalid RegEx string parsed for a-pattern-restrict: ${value}`); }
     }
   }
 
@@ -189,7 +190,7 @@ export class APatternRestrict {
   private revertToPreviousValue(): void {
     this.el.nativeElement.value = this.oldValue;
 
-    if (typeof(this.caretPosition) !== 'undefined') {
+    if (typeof(this.caretPosition) !== 'undefined' && this.caretPosition !== null) {
       this.setCaretPosition(this.caretPosition);
     }
 
