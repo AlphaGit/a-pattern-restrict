@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent }  from './app.component';
 
-import { AutoFocusComponent } from './autofocus/autofocus.component';
 import { HtmlPatternComponent } from './htmlPattern/htmlPattern.component';
 import { ImeInputComponent } from './imeInput/imeInput.component';
 import { InputTypeNumberComponent } from './inputTypeNumber/inputTypeNumber.component';
@@ -13,7 +12,6 @@ import { InputTypeNumberComponent } from './inputTypeNumber/inputTypeNumber.comp
 import { APatternRestrict } from './../../src/a-pattern-restrict.js';
 
 const appRoutes: Routes = [
-  { path: 'autofocus', component: AutoFocusComponent },
   { path: 'htmlPattern', component: HtmlPatternComponent },
   { path: 'imeInput', component: ImeInputComponent },
   { path: 'inputTypeNumber', component: InputTypeNumberComponent }
@@ -27,7 +25,6 @@ const appRoutes: Routes = [
                   APatternRestrict,
 
                   // Test components
-                  AutoFocusComponent,
                   HtmlPatternComponent,
                   ImeInputComponent,
                   InputTypeNumberComponent
