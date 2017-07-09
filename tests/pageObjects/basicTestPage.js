@@ -1,6 +1,7 @@
 module.exports = function BasicTestPage() {
   var patternTextBox = null;
   var textBox = null;
+  var setPatternButton = null;
 
   function setText(textElement, text) {
     // .clear().sendKeys() will POST value="" and POST value=text
@@ -16,10 +17,12 @@ module.exports = function BasicTestPage() {
 
       patternTextBox = element(by.id('pattern'));
       textBox = element(by.id('textbox'));
+      setPatternButton = element(by.id('btnSetPattern'));
     },
 
     setPattern: function(pattern) {
-      return setText(patternTextBox, pattern);
+      setText(patternTextBox, pattern);
+      return setPatternButton.click();
     },
 
     setText: function(text) {

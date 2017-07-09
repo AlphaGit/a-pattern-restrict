@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'test-htmlPattern',
-  templateUrl: 'app/htmlPattern/htmlPattern.component.html',
+  selector: 'test-inputTypeNumber',
+  templateUrl: 'app/inputTypeNumber/inputTypeNumber.component.html',
 })
-export class HtmlPatternComponent {
+export class InputTypeNumberComponent {
   private _restrictedPattern: string;
   private _patternToTest: string;
 

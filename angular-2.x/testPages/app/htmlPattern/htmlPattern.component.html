@@ -1,6 +1,7 @@
 <label for="patternText">Pattern:</label>
 <input type="text" id="pattern" [(ngModel)]="patternToTest" />
+<button id="btnSetPattern" (click)="setPattern()">Set Pattern</button>
 <br />
 
 <label for="textbox">Text:</label>
-<input type="text" id="textbox" [(ngModel)]="testValue" a-pattern-restrict [pattern]="patternToTest" />
+<input type="text" id="textbox" [(ngModel)]="testValue" a-pattern-restrict [pattern]="restrictedPattern" />
