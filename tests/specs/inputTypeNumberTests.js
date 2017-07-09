@@ -63,22 +63,13 @@ describe('Input type=number', function() {
     });
   });
 
-  it('should revert back to the previously known valid value if the input is numeric', function(done) {
+  it('should revert back to the previously known valid value if the input is numeric', function() {
     page.setPattern('^[123]*$');
 
-    setTimeout(function() {
-      page.setText('123');
-      expect(page.getText()).toEqual('123');
+    page.setText('123');
+    expect(page.getText()).toEqual('123');
 
-      setTimeout(function() {
-        page.setText('9999');
-        expect(page.getText()).toEqual('123');
-
-        setTimeout(function() {
-          done();
-        }, 5 * 1000);
-      });
-    }, 5 * 1000);
-
+    page.setText('9999');
+    expect(page.getText()).toEqual('123');
   });
 }); // End: Input type=number
