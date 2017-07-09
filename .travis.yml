@@ -21,7 +21,7 @@ before_script:
   - ./node_modules/protractor/bin/webdriver-manager update
   # listing current version of dependencies just for debugging purposes
   - echo "CURRENT VERSIONS"
-  - npm list
+  #- npm list -- for some reason this seems to hang travis builds
   - bower list
 script:
   - npm run test-travis
