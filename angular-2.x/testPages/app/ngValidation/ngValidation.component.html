@@ -1,0 +1,6 @@
+<form name="form"> 
+    <label for="textbox">Text 1:</label>
+    <input type="text" #textbox1="ngModel" id="textbox1" name="textbox1" a-pattern-restrict pattern="^[abc]*$" [(ngModel)]="modelValue" />
+
+    <p>textbox.valid: <span id="ngValid">{{textbox1.valid}}</span></p>
+</form>

@@ -31,7 +31,7 @@ module.exports = function ValidationTestPage() {
     },
 
     navigateInAppTo: function(testName) {
-      return element(by.css('a[href*="{' + testName + '"]')).click();
+      return element(by.css('a[href*="' + testName + '"]')).click();
     }
   }
 };

@@ -9,6 +9,7 @@ import { HtmlPatternComponent } from './htmlPattern/htmlPattern.component';
 import { ImeInputComponent } from './imeInput/imeInput.component';
 import { InputTypeNumberComponent } from './inputTypeNumber/inputTypeNumber.component';
 import { InputTypeTextComponent } from './inputTypeText/inputTypeText.component';
+import { NgValidationComponent } from './ngValidation/ngValidation.component';
 
 import { APatternRestrict } from './../../src/a-pattern-restrict.js';
 
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   { path: 'htmlPattern', component: HtmlPatternComponent },
   { path: 'imeInput', component: ImeInputComponent },
   { path: 'inputTypeNumber', component: InputTypeNumberComponent },
-  { path: 'inputTypeText', component: InputTypeTextComponent }
+  { path: 'inputTypeText', component: InputTypeTextComponent },
+  { path: 'ngValidation', component: NgValidationComponent }
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
                   HtmlPatternComponent,
                   ImeInputComponent,
                   InputTypeNumberComponent,
-                  InputTypeTextComponent
+                  InputTypeTextComponent,
+                  NgValidationComponent
                 ],
   bootstrap:    [ AppComponent ],
   exports:      [ RouterModule ]

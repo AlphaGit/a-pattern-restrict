@@ -1,14 +1,16 @@
-/*
 var TestPage = require('../pageObjects/validationTestPage');
 
 describe('Focus', function() {
   var page = null;
+
   beforeEach(function() {
     page = new TestPage();
-    page.open('testPages/ngValidation.html');    
+    page.open('testPages/');
+    page.navigateInAppTo('/ngValidation');
   });
 
-  it('should leave input always in a valid state', function() {
+  // pending: for some reason, the valid state is not restored
+  xit('should leave input always in a valid state', function() {
     //valid input
     page.setText('abc');
     expect(page.getValidStatusPromise()).toBe("true");
@@ -18,4 +20,3 @@ describe('Focus', function() {
     expect(page.getValidStatusPromise()).toBe("true");
   });
 }); // End: Focus
-*/
