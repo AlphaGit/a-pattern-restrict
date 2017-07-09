@@ -1,11 +1,12 @@
-/*
 var TestPage = require('../pageObjects/basicTestPage');
 
 describe('Input type=text', function() {
   var page = null;
+
   beforeEach(function() {
     page = new TestPage();
-    page.open('testPages/inputTypeText.html');
+    page.open('testPages/');
+    page.navigateInAppTo('/inputTypeText');
   });
 
   describe('Alphabetical input', function() {
@@ -42,4 +43,3 @@ describe('Input type=text', function() {
     });
   });
 }); // End: Input type=text
-*/
