@@ -1,8 +1,8 @@
-# a-pattern-restrict [![Build Status](https://travis-ci.org/AlphaGit/a-pattern-restrict.svg?branch=master)][travisci] [![Build Status](https://saucelabs.com/open_sauce/build_status/AlphaSau.svg)][AlphaSau]
+# a-pattern-restrict
 
 Allowing certain inputs based on a regex pattern, preventing the user from inputting anything invalid.
 
-[![Build Status](https://saucelabs.com/open_sauce/build_matrix/AlphaSau.svg)][AlphaSau]
+This project is a sister of [ng-pattern-restrict](https://github.com/AlphaGit/ng-pattern-restrict/) (for Angular 1.x)
 
 # What is this for?
 
@@ -14,20 +14,14 @@ This works similar to a masked input, except that no mask is displayed, and the 
 
 The logic is quite simple:
 
-- Initialization: save regex to be used from the `ng-pattern-restrict` attribute or the `pattern` attribute.
+- Initialization: save regex to be used from the `pattern` attribute (given that the `a-pattern-restrict` directive is present).
 - Wait for user input, and reach on `input` (for any value change), `keyup` (for keyboard entry) or `click` (for text drag and drop, contextual copy-paste, etc).
 - If the input matches the regex, save it as the latest valid value. Also save the current user's input caret position on the field.
 - If the input does not match the regex, restore the latest valid value and set the user input caret in the same position as it was. The user experience should be as if nothing was typed or changed.
 
 # Installation
 
-```console
-bower install a-pattern-restrict
-# or
-npm install a-pattern-restrict
-```
-
-Alternatively, copy the [a-pattern-restrict.js][srcfile] (or the minified version [a-pattern-restrict.min.js][srcminfile]) into your project, load it into the browser and use it away.
+Copy the [a-pattern-restrict.ts][srcfile] into your project, import the component and use it away.
 
 # Usage
 
@@ -35,60 +29,20 @@ Alternatively, copy the [a-pattern-restrict.js][srcfile] (or the minified versio
 <input type="text" pattern="[0-9]+" a-pattern-restrict />
 ```
 
-Should be the same as
-
-```html
-<input type="text" a-pattern-restrict="[0-9]+" pattern="[0-9]+" />
-```
-
 ## Notes:
 
-- ([#15][ticket15]) **Make sure to use "progressive" regular expressions.** The expressions are validated against the full regular expression. This means that if your regex is `\d\d`, and your textbox is empty, a user will never be able to type anything because the first keypress will not validate and will be reverted. Following the example, the proper regular expression should be `\d{0,2}`.
+- **Make sure to use "progressive" regular expressions.** The expressions are validated against the full regular expression. This means that if your regex is `\d\d`, and your textbox is empty, a user will never be able to type anything because the first keypress will not validate and will be reverted. Following the example, the proper regular expression should be `\d{0,2}`.
 - **Your regex must validate against empty strings if you want users to be able to remove the value from the textbox.**
-- **Make sure AngularJS is compatible with your browser.** It goes without saying, but your browser compatibility with AngularJS will make a huge impact on how well this directive can behave. For example, AngularJS 1.3 with IE 8 won't really play well together, and this directive is restricted by those limitations.
 
 If you still have problems, please make sure to check the [Compatibility notes][compatibility]. There are several issues that really depend on the browsers.
-
-# E2E testing
-
-In order to e2e test you need to execute the following steps:
-
-```console
-npm install
-./node_modules/protractor/bin/webdriver-manager update
-
-# then, for each time you want to test
-npm test
-```
-
-That's it. Neat, huh?
-
-Check out the [protractor configuration file][protractor conf] for the set of browsers that you want to test on your system.
 
 # Demo
 
 What's a library without a demo?
 
-[Here's a Plunkr demo for you to check out.][plunkr demo]
-
 ## Version list
 
-- [v0.2.2](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/v0.2.2)
-- [v0.2.1](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/v0.2.1)
-- [v0.2.0](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/v0.2.0)
-- [v0.1.1](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/v0.1.1)
-- [v0.1.0-alpha.6](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.6)
-- [v0.1.0-alpha.5](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.5)
-- [v0.1.0-alpha.4](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.4)
-- [v0.1.0-alpha.3](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.3)
-- [v0.1.0-alpha.2](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.2)
-- [v0.1.0-alpha.1](https://github.com/AlphaGit/ng-pattern-restrict/releases/tag/0.1.0-alpha.1)
+- [v0.2.2](https://github.com/AlphaGit/a-pattern-restrict/releases/tag/v0.2.2)
 
-[travisci]: https://travis-ci.org/AlphaGit/ng-pattern-restrict
-[ticket15]: https://github.com/AlphaGit/ng-pattern-restrict/issues/15
 [compatibility]: docs/compatibility.md
-[protractor conf]: protractor-conf.js
-[srcfile]: src/ng-pattern-restrict.js
-[srcminfile]: src/ng-pattern-restrict.min.js
-[plunkr demo]: https://plnkr.co/edit/QHgV7m9jlSLPImxcFif2?p=preview
-[AlphaSau]: https://saucelabs.com/u/AlphaSau
+[srcfile]: src/a-pattern-restrict.ts

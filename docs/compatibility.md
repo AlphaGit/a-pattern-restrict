@@ -14,8 +14,8 @@ A.K.A. known issues that I cannot really fix. Yeah, browsers do not make it easy
 
 ![Bad input not signaled by ValidityState object](IE11NumberBadInput.png)
 
-[submit an issue]: https://github.com/AlphaGit/ng-pattern-restrict/issues/new
-[submit PR]: https://github.com/AlphaGit/ng-pattern-restrict/pulls
+[submit an issue]: https://github.com/AlphaGit/a-pattern-restrict/issues/new
+[submit PR]: https://github.com/AlphaGit/a-pattern-restrict/pulls
 
 ## Android
 
@@ -44,7 +44,7 @@ The `arguments[0]` parameter should resolve to `protractorBaseModule_`, but I be
 
 **Tested:** 2015-09-07, OS X 10.11, Safari 8.1 ([details](https://saucelabs.com/beta/tests/8db6e1e8963f4530bb9bee010312353a))
 
-**Symptom:** ng-pattern-restrict will not go back to the previous valid value in Protractor tests.
+**Symptom:** a-pattern-restrict will not go back to the previous valid value in Protractor tests.
 
 **Cause:** Safari will update the value of the numeric inputs both on `POST /clear` and `POST /value`, and as such, the tests have no way of simulating the user replacing one text for another, such as selecting the whole text and typing over it.
 
