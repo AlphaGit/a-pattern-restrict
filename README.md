@@ -40,10 +40,6 @@ Copy the [a-pattern-restrict.ts][srcfile] into your project, import the componen
 
 If you still have problems, please make sure to check the [Compatibility notes][compatibility]. There are several issues that really depend on the browsers.
 
-# Demo
-
-What's a library without a demo?
-
 ## Version list
 
 - [v0.2.2](https://github.com/AlphaGit/a-pattern-restrict/releases/tag/v0.2.2)
