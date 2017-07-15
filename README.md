@@ -1,3 +1,7 @@
+### NOTE: This project is no longer under maintenance.
+
+However, we will gladly accept new PRs or questions.
+
 # a-pattern-restrict
 
 Allowing certain inputs based on a regex pattern, preventing the user from inputting anything invalid.
